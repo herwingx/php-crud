@@ -7,7 +7,7 @@
     <div class="col-md-4">
       <?php if (isset($_SESSION["message"])) { ?>
 
-        <div class="alert alert-<?=$_SESSION["message_type"];?> alert-dismissible fade show" role="alert">
+        <div class="alert alert-<?= $_SESSION["message_type"]; ?> alert-dismissible fade show" role="alert">
           <?= $_SESSION["message"] ?>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -27,6 +27,37 @@
           </div>
         </form>
       </div>
+    </div>
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $query = "SELECT * FROM task";
+          $resul_task = mysqli_query($conn, $query);
+
+          while ($row = mysqli_fetch_array($resul_task)) { ?>
+
+            <tr>
+              <td><?php echo $row["title"] ?></td>
+              <td><?php echo $row["description"] ?></td>
+              <td><?php echo $row["created_at"] ?></td>
+              <td>
+                <a href="edit.php?id=<?php echo $row['id']?>">Edit</a>
+                <a href="delete.php?id=<?php echo $row['id']?>">Delete</a>
+              </td>
+            </tr>
+
+          <?php } ?>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
