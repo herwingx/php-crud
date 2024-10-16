@@ -50,10 +50,10 @@
               <td><?php echo $row["description"] ?></td>
               <td><?php echo $row["created_at"] ?></td>
               <td>
-                <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
+                <a href="edit-task.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary">
                   <i class="fas fa-marker"></i>
                 </a>
-                <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">
+                <a href="delete-task.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">
                   <i class="fas fa-trash-alt"></i>
                 </a>
               </td>
