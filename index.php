@@ -31,14 +31,14 @@
     <div class="col-md-7 overflow-x-auto px-0">
       <table class="table table-bordered">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th>Title</th>
             <th>Description</th>
             <th>Created At</th>
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class=text-center>
           <?php
           $query = "SELECT * FROM task";
           $resul_task = mysqli_query($conn, $query);
@@ -49,7 +49,7 @@
               <td><?php echo $row["title"] ?></td>
               <td><?php echo $row["description"] ?></td>
               <td><?php echo $row["created_at"] ?></td>
-              <td class="text-center">
+              <td>
                 <a href="edit-task.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary m-1">
                   <i class="fas fa-marker"></i>
                 </a>
